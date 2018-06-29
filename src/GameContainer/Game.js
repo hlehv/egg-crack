@@ -16,8 +16,10 @@ class Game extends React.Component{
         //Set the egg array up
         let tempEggs = Array(this.props.eggNumber).fill(null);
         for (let i = 0; i < this.props.eggNumber; i++){
-            tempEggs[i]={id: i, golden: false, state: 'nothing'};
+    
+            tempEggs[i]={id: i, golden: false, state: 'nothing', easter: false};
         }
+
 
         this.state = {
             points: 0,
@@ -28,17 +30,21 @@ class Game extends React.Component{
 
         this.handleEggClick = this.handleEggClick.bind(this);
         this.handleNextRoundClick = this.handleNextRoundClick.bind(this);
+
+
     }
     componentDidMount(){
         //once everything is set up, select a golden egg
         this.setGold();
     }
 
+    
     createEgg = (egg) => {
         return <Egg  key={egg.id} 
                     golden={egg.golden} 
                     onClick={() => this.handleEggClick(egg.id)}
                     state={egg.state}
+                    easter={egg.easter}
                 />;
     }
 
@@ -53,6 +59,10 @@ class Game extends React.Component{
         for (let i = 0; i < this.props.eggNumber; i++){
             eggs[i].golden=false;
             eggs[i].state='nothing'
+            let easterNumber=randomNumberBetween(1,300);
+            if (easterNumber===69){
+                eggs[i].easter=true;
+            }
         }
         eggs[goldenEgg].golden=true;
     
@@ -156,5 +166,7 @@ class Game extends React.Component{
         );
     }
 }
+
+
 
 export default Game;
