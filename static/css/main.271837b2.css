@@ -1,0 +1,2 @@
+@import url(https://fonts.googleapis.com/css?family=Aldrich);body{margin:0;padding:0;font-family:sans-serif}.App{text-align:center}.App,input{font-family:Aldrich,sans-serif}input{width:7.5%;padding:12px 20px;-webkit-transition:.5s;-o-transition:.5s;transition:.5s;outline:none}input[type=text]:focus{border:3px solid #555}input[type=submit]{background-color:gold;border:none;color:#000;padding:14px 20px;text-decoration:none;margin:4px 2px;cursor:pointer;font-family:Aldrich,sans-serif}
+/*# sourceMappingURL=main.271837b2.css.map*/
