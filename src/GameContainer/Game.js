@@ -73,12 +73,7 @@ class Game extends React.Component{
 
         }
         if (this.state.step==='choice'){
-            for(let i = 0; i < eggs.length; i++){
-                eggs[i].state='nothing';
-            }
-            this.setState({
-                eggs: eggs,
-            });
+
             this.revealTruth(egg);
         }
     }
@@ -109,6 +104,13 @@ class Game extends React.Component{
         this.setState({
             step: 'pick',
             round: this.state.round + 1,
+        });
+        let eggs = this.state.eggs.slice();
+        for(let i = 0; i < eggs.length; i++){
+            eggs[i].state='nothing';
+        }
+        this.setState({
+            eggs: eggs,
         });
         this.setGold();
     }
