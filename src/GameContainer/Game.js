@@ -157,7 +157,7 @@ class Game extends React.Component{
                     {this.createEggs()}
                 </div>
                 <div className='description-container'>
-                    <Description step={this.state.step} />
+                    <Description step={this.state.step} plural={this.state.eggs.length>3} />
                 </div>
                 <div className='next-round-button'>
                     <NextRoundButton onClick={this.handleNextRoundClick} step={this.state.step} />

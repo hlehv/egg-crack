@@ -9,7 +9,14 @@ function Description(props){
     else if (props.step === 'choice')
     {
         return(
-            <p>Look! An empty egg. You can switch, or stay with the same egg. Pick an egg </p>
+            <div>
+                {!props.plural &&
+                <p> Look! An empty egg. You can switch eggs, or stay with the same egg. Pick an egg </p>
+                }
+                {props.plural &&
+                 <p> Look! Empty eggs. You can switch eggs, or stay with the same egg. Pick an egg </p>
+                }
+            </div>
         );
     }
     else if (props.step ==='correct'){
