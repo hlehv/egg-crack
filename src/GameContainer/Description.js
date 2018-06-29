@@ -14,7 +14,7 @@ function Description(props){
     }
     else if (props.step ==='correct'){
         return(
-            <p> Correct! You get a point </p>
+            <p> Eggcelent! You get a point </p>
         );
     }
     else if (props.step==='incorrect'){
