@@ -43,7 +43,7 @@ class App extends Component {
         {(this.state.start!==true) &&
           <div className='selectionMenuContainer'>
             <SelectionMenu onSubmit={this.handleSubmit} eggNumber={this.state.eggNumber} onChange={this.handleChange}/>
-            <p> Two eggs are empty, one is filled with gold. Ready? </p>
+            <p> One egg is filled with gold. Ready to find it? </p>
           </div>
         }
       </div>
