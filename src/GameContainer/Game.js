@@ -99,9 +99,11 @@ class Game extends React.Component{
             }
         }
         if (eggs[egg].golden){
-            let randomNumber = randomNumberBetween(0, (eggList.length-1));
-            let id = eggList[randomNumber];
-            eggs[id].state='nothing';
+            if(eggList.length>0){
+                let randomNumber = randomNumberBetween(0, (eggList.length-1));
+                let id = eggList[randomNumber];
+                eggs[id].state='nothing';
+            }
         }
 
         this.setState({
