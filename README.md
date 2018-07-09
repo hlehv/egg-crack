@@ -1,4 +1,4 @@
-#egg-crack
+# egg-crack
 
 A little game to better understand the Monty Hall problem.
 
