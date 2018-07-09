@@ -24,9 +24,15 @@ class App extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    this.setState({
-      start: true,
-    })
+    if (this.state.eggNumber > 1){
+      this.setState({
+        start: true,
+      })
+    }
+  }
+
+  tooSmall(){
+    return (this.state.eggNumber <= 1);
   }
 
   render() {
@@ -44,6 +50,7 @@ class App extends Component {
           <div className='selectionMenuContainer'>
             <SelectionMenu onSubmit={this.handleSubmit} eggNumber={this.state.eggNumber} onChange={this.handleChange}/>
             <p> One egg is filled with gold. Ready to find it? </p>
+            {this.tooSmall() && <p> Egg number must be greater than 1. </p>}
           </div>
         }
       </div>
